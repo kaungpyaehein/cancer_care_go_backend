@@ -1,0 +1,356 @@
+package data
+
+import (
+	"time"
+
+	"cancer_care_go_backend/internal/models"
+)
+
+// GetCancers returns the list of cancer types for English
+func GetCancers() []models.CancerType {
+	return []models.CancerType{
+		{
+			ID:          "1",
+			Name:        "Lung Cancer",
+			Description: "Lung cancer is a type of cancer that begins in the lungs. Your lungs are two spongy organs in your chest that take in oxygen when you inhale and release carbon dioxide when you exhale. It is the leading cause of cancer deaths worldwide.",
+			Symptoms:    "• A new cough that doesn't go away\n• Coughing up blood, even a small amount\n• Shortness of breath\n• Chest pain\n• Hoarseness\n• Losing weight without trying\n• Bone pain\n• Headache",
+			Treatments:  "Treatments vary but may include surgery, chemotherapy, radiation therapy, targeted drug therapy, and immunotherapy.",
+			ImageURL:    "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800",
+		},
+		{
+			ID:          "2",
+			Name:        "Breast Cancer",
+			Description: "Breast cancer is cancer that forms in the cells of the breasts. After skin cancer, breast cancer is the most common cancer diagnosed in women in the United States. Breast cancer can occur in both men and women, but it's far more common in women.",
+			Symptoms:    "• A breast lump or thickening that feels different from the surrounding tissue\n• Change in the size, shape or appearance of a breast\n• Changes to the skin over the breast, such as dimpling\n• A newly inverted nipple\n• Peeling, scaling, crushing or flaking of the pigmented area of skin surrounding the nipple (areola) or breast skin",
+			Treatments:  "Surgery, chemotherapy, radiation therapy, hormone therapy, and targeted therapy.",
+			ImageURL:    "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&q=80&w=800",
+		},
+		{
+			ID:          "3",
+			Name:        "Colorectal Cancer",
+			Description: "Colon cancer is a type of cancer that begins in the large intestine (colon). The colon is the final part of the digestive tract. It typically affects older adults, though it can happen at any age.",
+			Symptoms:    "• A persistent change in your bowel habits, including diarrhea or constipation or a change in the consistency of your stool\n• Rectal bleeding or blood in your stool\n• Persistent abdominal discomfort, such as cramps, gas or pain\n• A feeling that your bowel does not empty completely\n• Weakness or fatigue\n• Unexplained weight loss",
+			Treatments:  "Surgery is the most common treatment. Other options include chemotherapy, radiation therapy, and targeted drug therapy.",
+			ImageURL:    "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800",
+		},
+		{
+			ID:          "4",
+			Name:        "Prostate Cancer",
+			Description: "Prostate cancer is cancer that occurs in the prostate. The prostate is a small walnut-shaped gland in males that produces the seminal fluid that nourishes and transports sperm. It is one of the most common types of cancer.",
+			Symptoms:    "Prostate cancer may cause no signs or symptoms in its early stages. Prostate cancer that's more advanced may cause signs and symptoms such as:\n• Trouble urinating\n• Decreased force in the stream of urine\n• Blood in the urine\n• Blood in the semen\n• Bone pain\n• Losing weight without trying\n• Erectile dysfunction",
+			Treatments:  "Surgery, radiation therapy, hormone therapy, chemotherapy, and immunotherapy.",
+			ImageURL:    "https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&q=80&w=800",
+		},
+		{
+			ID:          "5",
+			Name:        "Liver Cancer",
+			Description: "Liver cancer is cancer that begins in the cells of your liver. Your liver is a football-sized organ that sits in the upper right portion of your abdomen, beneath your diaphragm and above your stomach. The most common form is hepatocellular carcinoma.",
+			Symptoms:    "• Losing weight without trying\n• Loss of appetite\n• Upper abdominal pain\n• Nausea and vomiting\n• General weakness and fatigue\n• Abdominal swelling\n• Yellow discoloration of your skin and the whites of your eyes (jaundice)\n• White, chalky stools",
+			Treatments:  "Surgery (partial hepatectomy or liver transplant), localized treatments (heating or freezing cancer cells), radiation therapy, targeted drug therapy, immunotherapy, and chemotherapy.",
+			ImageURL:    "https://images.unsplash.com/photo-1581594294883-5109c202942f?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		},
+		{
+			ID:          "6",
+			Name:        "Stomach (Gastric) Cancer",
+			Description: "Stomach cancer, also known as gastric cancer, is an abnormal growth of cells that begins in the stomach. It can affect any part of the stomach. In most of the world, stomach cancers form in the main part of the stomach (stomach body).",
+			Symptoms:    "• Difficulty swallowing (dysphagia)\n• Feeling bloated after eating\n• Feeling full after eating small amounts of food\n• Heartburn\n• Indigestion\n• Nausea\n• Stomach pain\n• Unintentional weight loss\n• Vomiting",
+			Treatments:  "Surgery, chemotherapy, radiation therapy, targeted therapy, and immunotherapy.",
+			ImageURL:    "https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?auto=format&fit=crop&q=80&w=800",
+		},
+		{
+			ID:          "7",
+			Name:        "Cervical Cancer",
+			Description: "Cervical cancer is a type of cancer that occurs in the cells of the cervix — the lower part of the uterus that connects to the vagina. Various strains of the human papillomavirus (HPV), a sexually transmitted infection, play a role in causing most cases.",
+			Symptoms:    "• Vaginal bleeding after intercourse, between periods or after menopause\n• Watery, bloody vaginal discharge that may be heavy and have a foul odor\n• Pelvic pain or pain during intercourse",
+			Treatments:  "Surgery, radiation therapy, chemotherapy, and targeted therapy.",
+			ImageURL:    "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800",
+		},
+		{
+			ID:          "8",
+			Name:        "Oral Cancer",
+			Description: "Oral cancer refers to cancer that develops in any of the parts that make up the mouth (oral cavity). Mouth cancer can occur on the lips, gum, tongue, inner lining of the cheeks, roof of the mouth, or floor of the mouth.",
+			Symptoms:    "• A sore that doesn't heal\n• A patch of white or red skin on the inside of your mouth\n• Loose teeth\n• A growth or lump inside your mouth\n• Mouth pain\n• Ear pain\n• Difficult or painful swallowing",
+			Treatments:  "Surgery, radiation therapy, and chemotherapy.",
+			ImageURL:    "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800",
+		},
+		{
+			ID:          "9",
+			Name:        "Ovarian Cancer",
+			Description: "Ovarian cancer is a growth of cells that forms in the ovaries. The cells multiply quickly and can invade and destroy healthy body tissue.",
+			Symptoms:    "• Abdominal bloating or swelling\n• Quickly feeling full when eating\n• Weight loss\n• Discomfort in the pelvic area\n• Fatigue\n• Back pain\n• Changes in bowel habits, such as constipation",
+			Treatments:  "Surgery and chemotherapy are the main treatments.",
+			ImageURL:    "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&q=80&w=800",
+		},
+		{
+			ID:          "10",
+			Name:        "Leukemia",
+			Description: "Leukemia is cancer of the body's blood-forming tissues, including the bone marrow and the lymphatic system. Many types of leukemia exist. Some forms of leukemia are more common in children. Other forms of leukemia occur mostly in adults.",
+			Symptoms:    "• Fever or chills\n• Persistent fatigue, weakness\n• Frequent or severe infections\n• Losing weight without trying\n• Swollen lymph nodes\n• Easy bleeding or bruising\n• Recurrent nosebleeds\n• Tiny red spots in your skin (petechiae)",
+			Treatments:  "Chemotherapy, targeted therapy, radiation therapy, bone marrow transplant, and immunotherapy.",
+			ImageURL:    "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80&w=800",
+		},
+		{
+			ID:          "11",
+			Name:        "Skin Cancer (Melanoma)",
+			Description: "Melanoma, the most serious type of skin cancer, develops in the cells (melanocytes) that produce melanin. It can occur anywhere on the body, but most often develops in areas that have had exposure to the sun.",
+			Symptoms:    "• A change in an existing mole\n• The development of a new pigmented or unusual-looking growth on your skin\n• Asymmetrical moles\n• Irregular borders\n• Changes in color\n• Diameter larger than a pencil eraser",
+			Treatments:  "Surgery to remove the tumor is the primary treatment.",
+			ImageURL:    "https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&q=80&w=800",
+		},
+		{
+			ID:          "12",
+			Name:        "Pancreatic Cancer",
+			Description: "Pancreatic cancer begins in the tissues of your pancreas. The pancreas releases enzymes that aid digestion and produces hormones that help manage your blood sugar.",
+			Symptoms:    "• Abdominal pain that radiates to your back\n• Loss of appetite or unintended weight loss\n• Yellowing of your skin and the whites of your eyes (jaundice)\n• Light-colored stools\n• Dark-colored urine\n• Itchy skin",
+			Treatments:  "Surgery, chemotherapy, and radiation therapy.",
+			ImageURL:    "https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=800",
+		},
+		{
+			ID:          "13",
+			Name:        "Thyroid Cancer",
+			Description: "Thyroid cancer occurs in the cells of the thyroid — a butterfly-shaped gland located at the base of your neck, just below your Adam's apple. Your thyroid produces hormones that regulate your heart rate, blood pressure, body temperature and weight.",
+			Symptoms:    "• A lump (nodule) that can be felt through the skin on your neck\n• Changes to your voice, including increasing hoarseness\n• Difficulty swallowing\n• Pain in your neck and throat\n• Swollen lymph nodes in your neck",
+			Treatments:  "Surgery, thyroid hormone therapy, radioactive iodine, targeted drug therapy.",
+			ImageURL:    "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800",
+		},
+		{
+			ID:          "14",
+			Name:        "Kidney Cancer",
+			Description: "Kidney cancer is cancer that begins in the kidneys. Your kidneys are two bean-shaped organs, each about the size of your fist, located behind your abdominal organs, with one kidney on each side of your spine.",
+			Symptoms:    "• Blood in your urine, which may appear pink, red or cola colored\n• Pain in your back or side that doesn't go away\n• Loss of appetite\n• Unexplained weight loss\n• Tiredness\n• Fever",
+			Treatments:  "Surgery, cryoablation, radiofrequency ablation, immunotherapy, targeted therapy.",
+			ImageURL:    "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800",
+		},
+		{
+			ID:          "15",
+			Name:        "Bladder Cancer",
+			Description: "Bladder cancer begins in the cells of the bladder. The bladder is a hollow muscular organ in your lower abdomen that stores urine. Bladder cancer most often begins in the cells (urothelial cells) that line the inside of your bladder.",
+			Symptoms:    "• Blood in urine (hematuria)\n• Frequent urination\n• Painful urination\n• Back pain",
+			Treatments:  "Surgery, intravesical therapy, chemotherapy, radiation therapy, immunotherapy.",
+			ImageURL:    "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&q=80&w=800",
+		},
+	}
+}
+
+// GetHospitals returns the list of hospitals for English
+func GetHospitals() []models.Hospital {
+	return []models.Hospital{
+		{
+			ID:          "1",
+			Name:        "Yangon General Hospital",
+			Address:     "Bogyoke Aung San Road, Latha Township, Yangon",
+			Phone:       "+95 1 256 112",
+			Description: "Yangon General Hospital is the largest hospital in Myanmar. It serves as the main teaching hospital for the University of Medicine 1, Yangon. It has a dedicated oncology department offering comprehensive cancer care including public services.",
+			ImageURL:    "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&q=80&w=800",
+			Rating:      4.5,
+			Specialties: []string{"Oncology", "Surgery", "General Medicine", "Radiology", "Emergency Medicine"},
+		},
+		{
+			ID:          "2",
+			Name:        "Pinlon Hospital",
+			Address:     "No. 26/Ka, Pinlon Road, North Dagon Township, Yangon",
+			Phone:       "+95 1 581 329",
+			Description: "Pinlon Hospital is a private hospital known for its specialized cancer center. It provides advanced diagnostic and treatment services including PET CT, Radiation Oncology, and Medical Oncology with state-of-the-art technology.",
+			ImageURL:    "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=800",
+			Rating:      4.8,
+			Specialties: []string{"Cancer Center", "Cardiology", "Neurology", "Urology", "Nuclear Medicine"},
+		},
+		{
+			ID:          "3",
+			Name:        "Asia Royal Hospital",
+			Address:     "No. 14, Baho Road, Sanchaung Township, Yangon",
+			Phone:       "+95 1 538 055",
+			Description: "Asia Royal Hospital provides multi-disciplinary medical services. It offers high-quality healthcare with modern facilities and experienced specialists. Known for cardiac and surgical procedures as well.",
+			ImageURL:    "https://images.unsplash.com/photo-1596541223130-5d31a73fb6c6?auto=format&fit=crop&q=80&w=800",
+			Rating:      4.6,
+			Specialties: []string{"Internal Medicine", "Surgery", "Pediatrics", "Obstetrics & Gynecology", "Oncology"},
+		},
+		{
+			ID:          "4",
+			Name:        "Pun Hlaing Siloam Hospital",
+			Address:     "Pun Hlaing Golf Estate Avenue, Hlaing Tharyar Township, Yangon",
+			Phone:       "+95 1 368 4323",
+			Description: "Pun Hlaing Siloam Hospital is an international standard hospital in Yangon. It is the only hospital in Myanmar to be accredited by the Joint Commission International (JCI), ensuring top-tier patient safety and quality care.",
+			ImageURL:    "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=800",
+			Rating:      4.9,
+			Specialties: []string{"Emergency Care", "Cardiology", "Orthopedics", "Wellness Checkup", "Oncology"},
+		},
+		{
+			ID:          "5",
+			Name:        "Grand Hantha International Hospital",
+			Address:     "No. 3, Corner of Nar Nat Taw Road & Kyye Myindaing Kanner Road, Kamаryut Township, Yangon",
+			Phone:       "+95 1 523 000",
+			Description: "Grand Hantha International Hospital is a private hospital located in Yangon. It provides a wide range of medical services with advanced medical equipment and a team of specialized doctors.",
+			ImageURL:    "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
+			Rating:      4.7,
+			Specialties: []string{"Cardiology", "Neurology", "Gastroenterology", "Oncology", "Pediatrics"},
+		},
+	}
+}
+
+// GetBlogs returns the list of blog posts for English
+func GetBlogs() []models.Blog {
+	now := time.Now()
+	return []models.Blog{
+		{
+			ID:       "1",
+			Title:    "Understanding Cancer Types",
+			Author:   "Dr. Thida Win",
+			Content:  "Cancer is a complex group of diseases with many possible causes. In this section, you can learn more about the different types of cancer, including risk factors, symptoms, diagnostic tests, and treatment options. Early detection is key to successful treatment.",
+			ImageURL: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
+			Date:     now.AddDate(0, 0, -2),
+			Category: "Education",
+		},
+		{
+			ID:       "2",
+			Title:    "Healthy Diet for Prevention",
+			Author:   "Nutritionist Ma Khin",
+			Content:  "Eating a variety of foods usually ensures you get the nutrients you need. Focus on fruits, vegetables, and whole grains. Limit processed meats and red meat. Drink alcohol in moderation, if at all. A balanced diet strengthens the immune system.",
+			ImageURL: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=800",
+			Date:     now.AddDate(0, 0, -5),
+			Category: "Lifestyle",
+		},
+		{
+			ID:       "3",
+			Title:    "New Treatments in 2026",
+			Author:   "Medical News Team",
+			Content:  "Researchers are constantly working to find better ways to prevent, diagnose, and treat cancer. The latest advancements include new immunotherapy drugs and personalized medicine approaches that target specific genetic mutations in cancer cells.",
+			ImageURL: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=800",
+			Date:     now.AddDate(0, 0, -10),
+			Category: "Research",
+		},
+		{
+			ID:       "4",
+			Title:    "Coping with Diagnosis",
+			Author:   "Dr. Myo Min",
+			Content:  "A cancer diagnosis can be overwhelming. It helps to learn as much as you can about your cancer diagnosis so you can make decisions about your care. Talk with your doctor, family, and friends. Support groups can also provide immense emotional relief.",
+			ImageURL: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&q=80&w=800",
+			Date:     now.AddDate(0, 0, -15),
+			Category: "Support",
+		},
+		{
+			ID:       "5",
+			Title:    "Mental Wellness for Patients",
+			Author:   "Psychologist Dr. Kyaw",
+			Content:  "Maintaining mental health is crucial during cancer treatment. Stress management techniques such as meditation, yoga, and mindfulness can help reduce anxiety and improve quality of life during recovery.",
+			ImageURL: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+			Date:     now.AddDate(0, 0, -20),
+			Category: "Mental Health",
+		},
+		{
+			ID:       "6",
+			Title:    "Guide for Caregivers",
+			Author:   "Nurse Su Su",
+			Content:  "Being a caregiver for a cancer patient is a challenging yet rewarding role. It's important to take care of yourself too. This guide offers practical tips on managing medications, doctor visits, and emotional support.",
+			ImageURL: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=800",
+			Date:     now.AddDate(0, 0, -25),
+			Category: "Caregiving",
+		},
+	}
+}
+
+// GetTreatments returns the list of treatment methods for English
+func GetTreatments() []models.Treatment {
+	return []models.Treatment{
+		{
+			ID:          "1",
+			Name:        "Surgery",
+			Description: "Surgery is often the first line of treatment for many types of cancer. It involves physically removing the tumor and surrounding tissue from the body.",
+			Procedure:   "The surgical procedure varies depending on the type and location of cancer. It may involve:\n• Removing the tumor and a margin of healthy tissue\n• Removing nearby lymph nodes\n• Reconstructive surgery if needed\n• Minimally invasive techniques when possible",
+			SideEffects: "• Pain and discomfort at the surgical site\n• Risk of infection\n• Bleeding\n• Fatigue during recovery\n• Scarring\n• Potential complications specific to the surgery type",
+			Recovery:    "Recovery time varies from a few weeks to several months depending on the extent of surgery. Follow-up care includes wound care, pain management, and gradual return to normal activities.",
+			ImageURL:    "https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&q=80&w=800",
+			ApplicableCancers: []string{
+				"Breast Cancer",
+				"Lung Cancer",
+				"Colorectal Cancer",
+				"Skin Cancer",
+				"Ovarian Cancer",
+				"Thyroid Cancer",
+			},
+		},
+		{
+			ID:          "2",
+			Name:        "Chemotherapy",
+			Description: "Chemotherapy uses powerful drugs to kill cancer cells or stop them from growing and dividing. It can be used alone or in combination with other treatments.",
+			Procedure:   "Chemotherapy is typically administered:\n• Intravenously (IV) through a vein\n• Orally as pills or capsules\n• Through injections\n• Topically as creams\n• Treatment cycles with rest periods in between",
+			SideEffects: "• Hair loss\n• Nausea and vomiting\n• Fatigue\n• Increased risk of infection\n• Loss of appetite\n• Mouth sores\n• Changes in taste\n• Anemia",
+			Recovery:    "Side effects usually improve after treatment ends. Hair typically grows back within 3-6 months. Regular blood tests monitor recovery of blood cell counts.",
+			ImageURL:    "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=800",
+			ApplicableCancers: []string{
+				"Leukemia",
+				"Lymphoma",
+				"Breast Cancer",
+				"Lung Cancer",
+				"Ovarian Cancer",
+				"Bladder Cancer",
+			},
+		},
+		{
+			ID:          "3",
+			Name:        "Radiation Therapy",
+			Description: "Radiation therapy uses high-energy rays or particles to destroy cancer cells. It can be delivered externally or internally (brachytherapy).",
+			Procedure:   "Treatment process includes:\n• Planning CT scans to map treatment area\n• Daily sessions (usually 5 days/week)\n• Each session lasts 10-30 minutes\n• Painless procedure\n• Treatment course typically 1-7 weeks",
+			SideEffects: "• Skin changes (redness, dryness)\n• Fatigue\n• Hair loss in treated area\n• Nausea (if abdomen treated)\n• Difficulty swallowing (if throat treated)\n• Side effects specific to treatment area",
+			Recovery:    "Most side effects improve within weeks after treatment ends. Skin changes may take several months to fully heal. Long-term follow-up monitors for late effects.",
+			ImageURL:    "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800",
+			ApplicableCancers: []string{
+				"Breast Cancer",
+				"Lung Cancer",
+				"Prostate Cancer",
+				"Brain Tumors",
+				"Cervical Cancer",
+			},
+		},
+		{
+			ID:          "4",
+			Name:        "Immunotherapy",
+			Description: "Immunotherapy helps your immune system fight cancer. It uses substances made by the body or in a laboratory to boost or restore immune system function.",
+			Procedure:   "Immunotherapy can be given:\n• Intravenously (IV)\n• Orally as pills\n• Topically as creams\n• Directly into the bladder\n• Treatment schedules vary by type",
+			SideEffects: "• Flu-like symptoms (fever, chills)\n• Fatigue\n• Skin reactions at injection site\n• Diarrhea\n• Weight changes\n• Autoimmune reactions\n• Inflammation of organs",
+			Recovery:    "Response to immunotherapy can continue after treatment ends. Side effects may persist but are generally manageable. Regular monitoring is essential.",
+			ImageURL:    "https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?auto=format&fit=crop&q=80&w=800",
+			ApplicableCancers: []string{
+				"Melanoma",
+				"Lung Cancer",
+				"Kidney Cancer",
+				"Bladder Cancer",
+				"Lymphoma",
+			},
+		},
+		{
+			ID:          "5",
+			Name:        "Targeted Therapy",
+			Description: "Targeted therapy uses drugs that target specific genes or proteins that help cancer cells grow and survive. It blocks the growth and spread of cancer while limiting damage to healthy cells.",
+			Procedure:   "Administration methods:\n• Oral medications (pills or capsules)\n• Intravenous infusions\n• Subcutaneous injections\n• Treatment may be continuous or in cycles\n• Often combined with other treatments",
+			SideEffects: "• Diarrhea\n• Liver problems\n• Skin and nail changes\n• High blood pressure\n• Blood clotting problems\n• Slow wound healing\n• Fatigue",
+			Recovery:    "Side effects are usually less severe than chemotherapy. Most improve after treatment stops. Regular blood tests monitor liver function and other parameters.",
+			ImageURL:    "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800",
+			ApplicableCancers: []string{
+				"Breast Cancer",
+				"Lung Cancer",
+				"Colorectal Cancer",
+				"Leukemia",
+				"Melanoma",
+				"Kidney Cancer",
+				"Thyroid Cancer",
+			},
+		},
+		{
+			ID:          "6",
+			Name:        "Hormone Therapy",
+			Description: "Hormone therapy slows or stops the growth of cancers that use hormones to grow. It works by blocking the body's ability to produce hormones or interfering with hormone action.",
+			Procedure:   "Treatment approaches:\n• Oral medications (daily pills)\n• Injections (monthly or every few months)\n• Surgery to remove hormone-producing organs\n• Treatment duration: typically 5-10 years\n• May be combined with other treatments",
+			SideEffects: "• Hot flashes\n• Fatigue\n• Mood changes\n• Bone thinning (osteoporosis)\n• Weight gain\n• Joint pain\n• Sexual side effects",
+			Recovery:    "Many side effects improve after treatment ends. Bone density monitoring is important during and after treatment. Long-term benefits often outweigh temporary side effects.",
+			ImageURL:    "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&q=80&w=800",
+			ApplicableCancers: []string{
+				"Breast Cancer",
+				"Prostate Cancer",
+				"Ovarian Cancer",
+				"Endometrial Cancer",
+				"Thyroid Cancer",
+			},
+		},
+	}
+}
