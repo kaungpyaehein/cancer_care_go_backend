@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: cancer-care-api
+    runtime: go
+    buildCommand: go build -o app ./cmd/api
+    startCommand: ./app
+    healthCheckPath: /api/health
+    envVars:
+      - key: GIN_MODE
+        value: release

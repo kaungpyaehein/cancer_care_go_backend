@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"cancer_care_go_backend/internal/db"
 	"cancer_care_go_backend/internal/handlers"
 	"cancer_care_go_backend/internal/middleware"
 
@@ -12,6 +13,9 @@ import (
 )
 
 func main() {
+	// Connect to Supabase
+	db.Connect()
+
 	// Set Gin mode (release/debug)
 	mode := os.Getenv("GIN_MODE")
 	if mode == "" {
