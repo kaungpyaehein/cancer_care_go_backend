@@ -1,7 +1,7 @@
 services:
   - type: web
     name: cancer-care-api
-    runtime: go
+    env: go
     buildCommand: go build -o app ./cmd/api
     startCommand: ./app
     healthCheckPath: /api/health
