@@ -20,7 +20,11 @@ func main() {
 	}
 	defer db.Close()
 
-	data, err := os.ReadFile("migrations/001_schema.sql")
+	file := "migrations/001_schema.sql"
+	if len(os.Args) > 1 {
+		file = os.Args[1]
+	}
+	data, err := os.ReadFile(file)
 	if err != nil {
 		log.Fatal(err)
 	}
